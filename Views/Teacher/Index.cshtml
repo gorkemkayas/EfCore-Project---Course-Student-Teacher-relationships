@@ -1,0 +1,38 @@
+@model IEnumerable<Teacher>
+<h2 class="text-center" style="margin-top: 3%;">Teachers</h2>
+<hr>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(m => m.TeacherId)</th>
+                <th>@Html.DisplayNameFor(m => m.TeacherName)</th>
+                <th>@Html.DisplayNameFor(m => m.TeacherSurname)</th>
+                <th>@Html.DisplayNameFor(m => m.RegisterDate)</th>
+                <th class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(m => item.TeacherId)</td>
+                    <td>@Html.DisplayFor(m => item.TeacherName)</td>
+                    <td>@Html.DisplayFor(m => item.TeacherSurname)</td>
+                    <td>@Html.DisplayFor(m => item.RegisterDate)</td>
+                    <td class="text-center">
+                        <a asp-action="Edit" asp-route-id="@item.TeacherId" class="btn btn-secondary">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@item.TeacherId" class="btn btn-dark">Delete</a>
+                    </td>
+                </tr>
+            }
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="text-center"><a href="/Teacher/Create" class="btn btn-outline-success"> Create Profile</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    

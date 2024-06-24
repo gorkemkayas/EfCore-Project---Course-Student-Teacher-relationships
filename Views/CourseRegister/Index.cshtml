@@ -1,0 +1,38 @@
+@model IEnumerable<CourseRegister>
+    
+    <h2 class="text-center" style="margin-top: 3%;">Course Registers</h2>
+    <hr>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(m => m.RegisterId)</th>
+                    <th>@Html.DisplayNameFor(m => m.StudentId)</th>
+                    <th>@Html.DisplayNameFor(m => m.CourseId)</th>
+                    <th>@Html.DisplayNameFor(m => m.RegisterDate)</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(m => item.RegisterId)</td>
+                        <td>@Html.DisplayFor(m => item.Student.StudentName) @Html.DisplayFor(m => item.Student.StudentSurname)</td>
+                        <td>@Html.DisplayFor(m => item.Course.CourseHeader)</td>
+                        <td>@Html.DisplayFor(m => item.RegisterDate)</td>
+                        <td class="text-center">
+                            <a asp-action="Edit" asp-route-id="@item.CourseId" class="btn btn-secondary">Edit</a>
+                            <a asp-action="Delete" asp-route-id="@item.RegisterId" class="btn btn-dark">Delete</a>  
+                        </td>                           
+                    </tr>
+
+                }
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="text-center"><a asp-controller="CourseRegister" asp-action="CreateRegister" class="btn btn-outline-success"> Create Register</a></td>
+                </tr>
+            </tbody>
+        </table>

@@ -1,0 +1,5 @@
+Problem related if CourseRegister inputs can be null.
+
+Teacher group will be showed as a list in Create Course.
+TeacherId must be unique, current courses has not TeacherId,
+

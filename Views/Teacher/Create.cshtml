@@ -1,0 +1,27 @@
+@model Teacher
+<h2 class="text-center" style="margin-top: 3%;">Create Profile</h2>
+<hr>
+<form asp-controller="Teacher" asp-action="Create" method="post">
+    <div class="mb-3">
+        <label asp-for="TeacherName" class="form-label">Teacher Name</label>
+        <input asp-for="TeacherName" class="form-control">
+        <span asp-validation-for="TeacherName"></span>
+
+        <label asp-for="TeacherSurname" class="form-label">Teacher Surname</label>
+        <input asp-for="TeacherSurname" class="form-control">
+        <span asp-validation-for="TeacherSurname"></span>
+
+        <label asp-for="TeacherEmail" class="form-label">Teacher Email</label>
+        <input asp-for="TeacherEmail" class="form-control">
+        <span asp-validation-for="TeacherEmail"></span>
+
+        <label asp-for="TeacherPhoneNumber" class="form-label">Teacher Phone Number</label>
+        <input asp-for="TeacherPhoneNumber" class="form-control">
+        <span asp-validation-for="TeacherPhoneNumber"></span>
+
+        <label asp-for="RegisterDate" class="form-label">Teacher Register Date</label>
+        <input asp-for="RegisterDate" class="form-control">
+        <span asp-validation-for="RegisterDate"></span>
+    </div>
+    <button type="submit" class="btn btn-secondary">Save</button>
+</form>

@@ -1,0 +1,46 @@
+@model CourseViewModel
+<h2 class="text-center" style="margin-top: 3%;">Edit Course</h2>
+<hr>
+<div class="container">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-5">
+            <form asp-controller="Course" asp-action="Edit" method="post">
+                <div asp-validation-summary="All"></div>
+                <input type="hidden" asp-for="CourseId">
+                <div class="mb-3 text-center">
+                    <label asp-for="CourseHeader" class="form-label h4" style="margin-bottom: -2px;">New Course Header</label>
+                    <hr>
+                    <input asp-for="CourseHeader" class="form-control">
+                </div>
+                <div class="mb-3 text-center">
+                    <label asp-for="TeacherId" class="form-label text-center h4">Teacher</label>
+                    <hr>
+                    <select asp-for="TeacherId" asp-items="ViewBag.Teachers" class="form-select">
+                        <option value="">Select</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-secondary">Save</button>
+            </form>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-4">
+            <ul class="list-unstyled">
+                <li>
+                    <h4 class="text-center">Students</h4>
+                    <hr>
+                    <ul>
+                        @foreach(var item in @Model.CourseRegister)
+                        {
+                            <li>@item.Student.StudentName @item.Student.StudentSurname </li>
+                        }
+                    </ul>
+                </li>
+                <br><br><br>
+                <li>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>

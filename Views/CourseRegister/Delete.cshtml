@@ -1,0 +1,12 @@
+@model CourseRegister
+
+<h2>Delete Course</h2>
+<hr>
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="RegisterId">
+<div class="container text-center" style="margin-top: 25%;">
+    <p>Do you want to delete register named as <b>@Model.RegisterId</b></p>
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+    <button type="submit" class="btn btn-dark">Delete</button>
+</div>
+</form>

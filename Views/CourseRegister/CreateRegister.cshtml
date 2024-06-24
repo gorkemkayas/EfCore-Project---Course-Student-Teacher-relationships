@@ -1,0 +1,27 @@
+@model CourseRegister
+
+<h2>Create Register</h2>
+<hr>
+
+<div class="container">
+    <form asp-action="CreateRegister" method="post">
+        <div class="mb-3">
+            <label asp-for="CourseId" class="form-label"> Course Header</label>
+            <select asp-for="CourseId" asp-items="ViewBag.Courses" class="form-control">
+                <option value="">Select</option>
+            </select>
+            <span asp-validation-for="CourseId"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="StudentId" class="form-label"> Student Name</label>
+            <select asp-for="StudentId" asp-items="ViewBag.Students" class="form-select">
+                <option value="">Select</option>
+            </select>
+            <span asp-validation-for="StudentId"></span>
+
+            <input type="hidden" name="Student" value="">
+        </div>
+
+        <button type="submit" class="btn btn-dark">Save</button>
+    </form>
+</div>

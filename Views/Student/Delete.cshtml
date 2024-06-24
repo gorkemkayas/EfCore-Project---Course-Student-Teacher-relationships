@@ -1,0 +1,11 @@
+@model Student
+<form action="Delete" method="post">
+<input type="hidden" name="id" value="@Model.StudentId">
+<div class="container text-center" style="margin-top: 25%;">
+    <p>
+        Do you want to delete profile of <b>@Model.StudentName @Model.StudentSurname</b> ?
+    </p>
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+    <button type="submit" class="btn btn-dark">Delete</button>
+</div>
+</form>

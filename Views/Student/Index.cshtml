@@ -1,0 +1,35 @@
+@model IEnumerable<Student>
+<h2 class="text-center" style="margin-top: 3%;">Students</h2>
+<hr>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(m => m.StudentId)</th>
+                <th>@Html.DisplayNameFor(m => m.StudentName)</th>
+                <th>@Html.DisplayNameFor(m => m.StudentSurname)</th>
+                <th class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(m => item.StudentId)</td>
+                    <td>@Html.DisplayFor(m => item.StudentName)</td>
+                    <td>@Html.DisplayFor(m => item.StudentSurname)</td>
+                    <td class="text-center">
+                        <a asp-action="Edit" asp-route-id="@item.StudentId" class="btn btn-secondary">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@item.StudentId" class="btn btn-dark">Delete</a>
+                    </td>
+                </tr>
+            }
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="text-center"><a href="/Student/Create" class="btn btn-outline-success"> Create Profile</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    
